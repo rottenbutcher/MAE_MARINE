@@ -196,3 +196,87 @@
 2025-10-16 12:49:32,234 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 39 EpochTime = 22.102 (s) Losses = ['2.2445'] lr = 0.000479
 2025-10-16 12:49:32,622 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
 2025-10-16 12:49:34,411 - pretrain_vessel_Point_M2AE - INFO - [Epoch 40/300][Batch 1/19] BatchTime = 1.787 (s) DataTime = 0.663 (s) Losses = ['1.9164'] lr = 0.000479
+2025-10-16 12:49:54,654 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 40 EpochTime = 22.030 (s) Losses = ['2.0049'] lr = 0.000478
+2025-10-16 12:49:55,035 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:49:56,811 - pretrain_vessel_Point_M2AE - INFO - [Epoch 41/300][Batch 1/19] BatchTime = 1.775 (s) DataTime = 0.652 (s) Losses = ['1.7791'] lr = 0.000478
+2025-10-16 12:50:17,080 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 41 EpochTime = 22.044 (s) Losses = ['2.5842'] lr = 0.000477
+2025-10-16 12:50:17,581 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:50:19,381 - pretrain_vessel_Point_M2AE - INFO - [Epoch 42/300][Batch 1/19] BatchTime = 1.799 (s) DataTime = 0.676 (s) Losses = ['2.5770'] lr = 0.000477
+2025-10-16 12:50:39,632 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 42 EpochTime = 22.050 (s) Losses = ['2.8109'] lr = 0.000476
+2025-10-16 12:50:40,022 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:50:41,777 - pretrain_vessel_Point_M2AE - INFO - [Epoch 43/300][Batch 1/19] BatchTime = 1.754 (s) DataTime = 0.635 (s) Losses = ['2.6373'] lr = 0.000476
+2025-10-16 12:51:02,047 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 43 EpochTime = 22.024 (s) Losses = ['2.0880'] lr = 0.000475
+2025-10-16 12:51:02,533 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:51:04,388 - pretrain_vessel_Point_M2AE - INFO - [Epoch 44/300][Batch 1/19] BatchTime = 1.854 (s) DataTime = 0.722 (s) Losses = ['8.4536'] lr = 0.000475
+2025-10-16 12:51:24,669 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 44 EpochTime = 22.135 (s) Losses = ['2.1907'] lr = 0.000474
+2025-10-16 12:51:25,100 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:51:26,867 - pretrain_vessel_Point_M2AE - INFO - [Epoch 45/300][Batch 1/19] BatchTime = 1.766 (s) DataTime = 0.646 (s) Losses = ['1.9412'] lr = 0.000474
+2025-10-16 12:51:47,170 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 45 EpochTime = 22.068 (s) Losses = ['1.6630'] lr = 0.000473
+2025-10-16 12:51:47,577 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:51:49,443 - pretrain_vessel_Point_M2AE - INFO - [Epoch 46/300][Batch 1/19] BatchTime = 1.863 (s) DataTime = 0.702 (s) Losses = ['1.2198'] lr = 0.000473
+2025-10-16 12:52:09,831 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 46 EpochTime = 22.251 (s) Losses = ['1.3369'] lr = 0.000472
+2025-10-16 12:52:10,223 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:52:12,139 - pretrain_vessel_Point_M2AE - INFO - [Epoch 47/300][Batch 1/19] BatchTime = 1.914 (s) DataTime = 0.791 (s) Losses = ['1.1800'] lr = 0.000472
+2025-10-16 12:52:32,414 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 47 EpochTime = 22.189 (s) Losses = ['1.2631'] lr = 0.000470
+2025-10-16 12:52:32,807 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:52:34,603 - pretrain_vessel_Point_M2AE - INFO - [Epoch 48/300][Batch 1/19] BatchTime = 1.794 (s) DataTime = 0.670 (s) Losses = ['1.3033'] lr = 0.000470
+2025-10-16 12:52:54,857 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 48 EpochTime = 22.048 (s) Losses = ['1.2529'] lr = 0.000469
+2025-10-16 12:52:55,245 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:52:57,079 - pretrain_vessel_Point_M2AE - INFO - [Epoch 49/300][Batch 1/19] BatchTime = 1.833 (s) DataTime = 0.708 (s) Losses = ['1.3347'] lr = 0.000469
+2025-10-16 12:53:17,347 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 49 EpochTime = 22.101 (s) Losses = ['1.2265'] lr = 0.000468
+2025-10-16 12:53:17,743 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:53:19,535 - pretrain_vessel_Point_M2AE - INFO - [Epoch 50/300][Batch 1/19] BatchTime = 1.789 (s) DataTime = 0.657 (s) Losses = ['1.2013'] lr = 0.000468
+2025-10-16 12:53:39,811 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 50 EpochTime = 22.065 (s) Losses = ['1.2329'] lr = 0.000467
+2025-10-16 12:53:40,211 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:53:42,012 - pretrain_vessel_Point_M2AE - INFO - [Epoch 51/300][Batch 1/19] BatchTime = 1.799 (s) DataTime = 0.674 (s) Losses = ['1.0829'] lr = 0.000467
+2025-10-16 12:54:02,270 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 51 EpochTime = 22.058 (s) Losses = ['1.1796'] lr = 0.000465
+2025-10-16 12:54:02,653 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:54:04,470 - pretrain_vessel_Point_M2AE - INFO - [Epoch 52/300][Batch 1/19] BatchTime = 1.815 (s) DataTime = 0.696 (s) Losses = ['1.1233'] lr = 0.000465
+2025-10-16 12:54:24,712 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 52 EpochTime = 22.057 (s) Losses = ['1.1363'] lr = 0.000464
+2025-10-16 12:54:25,094 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:54:26,917 - pretrain_vessel_Point_M2AE - INFO - [Epoch 53/300][Batch 1/19] BatchTime = 1.822 (s) DataTime = 0.697 (s) Losses = ['1.0868'] lr = 0.000464
+2025-10-16 12:54:47,226 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 53 EpochTime = 22.130 (s) Losses = ['1.1138'] lr = 0.000463
+2025-10-16 12:54:47,881 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:54:50,134 - pretrain_vessel_Point_M2AE - INFO - [Epoch 54/300][Batch 1/19] BatchTime = 2.251 (s) DataTime = 1.099 (s) Losses = ['1.1155'] lr = 0.000463
+2025-10-16 12:55:10,781 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 54 EpochTime = 22.898 (s) Losses = ['1.4216'] lr = 0.000461
+2025-10-16 12:55:11,497 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:55:13,576 - pretrain_vessel_Point_M2AE - INFO - [Epoch 55/300][Batch 1/19] BatchTime = 2.078 (s) DataTime = 0.923 (s) Losses = ['1.2392'] lr = 0.000461
+2025-10-16 12:55:34,369 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 55 EpochTime = 22.870 (s) Losses = ['1.2053'] lr = 0.000460
+2025-10-16 12:55:35,206 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:55:37,651 - pretrain_vessel_Point_M2AE - INFO - [Epoch 56/300][Batch 1/19] BatchTime = 2.443 (s) DataTime = 1.214 (s) Losses = ['0.9939'] lr = 0.000460
+2025-10-16 12:55:58,488 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 56 EpochTime = 23.279 (s) Losses = ['1.1609'] lr = 0.000458
+2025-10-16 12:55:59,215 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:56:01,481 - pretrain_vessel_Point_M2AE - INFO - [Epoch 57/300][Batch 1/19] BatchTime = 2.263 (s) DataTime = 1.061 (s) Losses = ['1.1383'] lr = 0.000458
+2025-10-16 12:56:22,594 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 57 EpochTime = 23.376 (s) Losses = ['1.1465'] lr = 0.000457
+2025-10-16 12:56:23,137 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:56:24,996 - pretrain_vessel_Point_M2AE - INFO - [Epoch 58/300][Batch 1/19] BatchTime = 1.858 (s) DataTime = 0.736 (s) Losses = ['1.1002'] lr = 0.000457
+2025-10-16 12:56:45,365 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 58 EpochTime = 22.227 (s) Losses = ['1.1316'] lr = 0.000455
+2025-10-16 12:56:45,831 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:56:47,632 - pretrain_vessel_Point_M2AE - INFO - [Epoch 59/300][Batch 1/19] BatchTime = 1.798 (s) DataTime = 0.644 (s) Losses = ['1.1617'] lr = 0.000455
+2025-10-16 12:57:08,212 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 59 EpochTime = 22.379 (s) Losses = ['1.1019'] lr = 0.000454
+2025-10-16 12:57:08,790 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:57:10,632 - pretrain_vessel_Point_M2AE - INFO - [Epoch 60/300][Batch 1/19] BatchTime = 1.840 (s) DataTime = 0.698 (s) Losses = ['1.1358'] lr = 0.000454
+2025-10-16 12:57:30,997 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 60 EpochTime = 22.206 (s) Losses = ['1.1080'] lr = 0.000452
+2025-10-16 12:57:31,395 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:57:33,278 - pretrain_vessel_Point_M2AE - INFO - [Epoch 61/300][Batch 1/19] BatchTime = 1.881 (s) DataTime = 0.759 (s) Losses = ['1.0399'] lr = 0.000452
+2025-10-16 12:57:53,515 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 61 EpochTime = 22.118 (s) Losses = ['1.1331'] lr = 0.000451
+2025-10-16 12:57:53,899 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:57:55,657 - pretrain_vessel_Point_M2AE - INFO - [Epoch 62/300][Batch 1/19] BatchTime = 1.757 (s) DataTime = 0.635 (s) Losses = ['0.9192'] lr = 0.000451
+2025-10-16 12:58:15,925 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 62 EpochTime = 22.025 (s) Losses = ['1.0912'] lr = 0.000449
+2025-10-16 12:58:16,347 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:58:18,251 - pretrain_vessel_Point_M2AE - INFO - [Epoch 63/300][Batch 1/19] BatchTime = 1.902 (s) DataTime = 0.774 (s) Losses = ['1.1551'] lr = 0.000449
+2025-10-16 12:58:38,614 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 63 EpochTime = 22.265 (s) Losses = ['1.1444'] lr = 0.000448
+2025-10-16 12:58:38,999 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:58:40,762 - pretrain_vessel_Point_M2AE - INFO - [Epoch 64/300][Batch 1/19] BatchTime = 1.762 (s) DataTime = 0.641 (s) Losses = ['1.0774'] lr = 0.000448
+2025-10-16 12:59:01,152 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 64 EpochTime = 22.152 (s) Losses = ['1.0600'] lr = 0.000446
+2025-10-16 12:59:01,659 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:59:03,452 - pretrain_vessel_Point_M2AE - INFO - [Epoch 65/300][Batch 1/19] BatchTime = 1.791 (s) DataTime = 0.663 (s) Losses = ['1.1677'] lr = 0.000446
+2025-10-16 12:59:23,848 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 65 EpochTime = 22.187 (s) Losses = ['1.0872'] lr = 0.000444
+2025-10-16 12:59:24,238 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:59:26,030 - pretrain_vessel_Point_M2AE - INFO - [Epoch 66/300][Batch 1/19] BatchTime = 1.791 (s) DataTime = 0.666 (s) Losses = ['1.0423'] lr = 0.000444
+2025-10-16 12:59:46,297 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 66 EpochTime = 22.057 (s) Losses = ['1.0721'] lr = 0.000443
+2025-10-16 12:59:46,771 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 12:59:48,835 - pretrain_vessel_Point_M2AE - INFO - [Epoch 67/300][Batch 1/19] BatchTime = 2.062 (s) DataTime = 0.931 (s) Losses = ['0.9780'] lr = 0.000443
+2025-10-16 13:00:09,121 - pretrain_vessel_Point_M2AE - INFO - [Training] EPOCH: 67 EpochTime = 22.349 (s) Losses = ['1.0492'] lr = 0.000441
+2025-10-16 13:00:09,553 - pretrain_vessel_Point_M2AE - INFO - Save checkpoint at ./experiments/pretrain_vessel_Point_M2AE/cfgs/pretrain_vessel_run_3/ckpt-last.pth
+2025-10-16 13:00:11,297 - pretrain_vessel_Point_M2AE - INFO - [Epoch 68/300][Batch 1/19] BatchTime = 1.742 (s) DataTime = 0.622 (s) Losses = ['1.1263'] lr = 0.000441

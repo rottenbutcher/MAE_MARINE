@@ -31,14 +31,17 @@ class DiscreteVAE(nn.Module):
         
     def forward(self, pts, **kwargs):
         # 1. 포인트 클라우드를 패치로 나눔
-        neighborhood, _ = self.group_divider(pts)
+        # ================================================================= #
+        #              반환값을 3개 받도록 수정 (center, idx 무시)            #
+        # ================================================================= #
+        neighborhood, _, _ = self.group_divider(pts)
+        
         B, G, K, _ = neighborhood.shape # Batch, Group, K-points
         
         # 2. Encoder로 각 패치의 feature 추출
         patch_features = self.encoder(neighborhood) # B, G, C
         
         # 3. Codebook에서 가장 가까운 토큰 찾기 (양자화)
-        # (B, G, C)와 (num_tokens, C) 사이의 거리 계산
         dist = torch.cdist(patch_features, self.codebook.weight, p=2) # B, G, num_tokens
         token_ids = torch.argmin(dist, dim=-1) # B, G
         
