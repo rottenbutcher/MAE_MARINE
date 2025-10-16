@@ -1,0 +1,4 @@
+NAME: Vessel
+DATA_PATH: data/Vessel
+N_POINTS: 8192
+PC_PATH: data/Vessel/vessel_pc
