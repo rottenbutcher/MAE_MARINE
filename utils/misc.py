@@ -16,7 +16,13 @@ def fps(data, number):
         number int
     '''
     fps_idx = pointnet2_utils.furthest_point_sample(data, number) 
-    fps_data = pointnet2_utils.gather_operation(data.transpose(1, 2).contiguous(), fps_idx).transpose(1,2).contiguous()
+    gathered_data = pointnet2_utils.gather_operation(data.transpose(1, 2).contiguous(), fps_idx)
+    
+    # 배치 사이즈가 1일 때 차원이 축소되는 것을 방지하는 코드 추가
+    if gathered_data.dim() == 2:
+        gathered_data = gathered_data.unsqueeze(0)
+
+    fps_data = gathered_data.transpose(1, 2).contiguous()
     return fps_data
 
 

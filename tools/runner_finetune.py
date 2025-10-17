@@ -124,27 +124,25 @@ def run_net(args, config, train_writer=None, val_writer=None):
             points = data[0].cuda()
             label = data[1].cuda()
 
-            if npoints == 1024:
-                point_all = 1200
-            elif npoints == 2048:
-                point_all = 2400
-            elif npoints == 4096:
-                point_all = 4800
-            elif npoints == 8192:
-                point_all = 8192
-            else:
-                raise NotImplementedError()
+            # --- 추가된 부분 시작 ---
+            # 텐서가 2차원일 경우(배치 차원이 없을 경우) 배치 차원을 추가해줍니다.
+            if points.size(0) <= 1:
+                print_log(f"Skipping batch {idx} because its size ({points.size(0)}) is <= 1, which causes BatchNorm error.", logger=logger)
+                continue
+            # --- 추가 끝 ---
 
-            if points.size(1) < point_all:
-                point_all = points.size(1)
+            if points.dim() == 2:
+                points = points.unsqueeze(0)
 
-            fps_idx = pointnet2_utils.furthest_point_sample(points, point_all)  # (B, npoint)
-            fps_idx = fps_idx[:, np.random.choice(point_all, npoints, False)]
-            points = pointnet2_utils.gather_operation(points.transpose(1, 2).contiguous(), fps_idx).transpose(1, 2).contiguous()  # (B, N, 3)
-            # import pdb; pdb.set_trace()
+            if points.size(1) != npoints:
+                points = misc.fps(points, npoints)
+
             points = train_transforms(points)
 
             ret = base_model(points)
+            if ret.shape[0] == 0:
+                print_log(f"Skipping batch {idx} due to batch size <= 1 after GPU split.", logger=logger)
+                continue # 다음 루프로 넘어갑니다.
 
             loss, acc = base_model.module.get_loss_acc(ret, label)
 
@@ -192,11 +190,15 @@ def run_net(args, config, train_writer=None, val_writer=None):
             scheduler.step(epoch)
         epoch_end_time = time.time()
 
-        if train_writer is not None:
-            train_writer.add_scalar('Loss/Epoch/Loss', losses.avg(0), epoch)
+        if losses.count(0) > 0:
+            if train_writer is not None:
+                train_writer.add_scalar('Loss/Epoch/Loss', losses.avg(0), epoch)
 
-        print_log('[Training] EPOCH: %d EpochTime = %.3f (s) Losses = %s lr = %.6f' %
-            (epoch,  epoch_end_time - epoch_start_time, ['%.4f' % l for l in losses.avg()],optimizer.param_groups[0]['lr']), logger = logger)
+            print_log('[Training] EPOCH: %d EpochTime = %.3f (s) Losses = %s lr = %.6f' %
+                (epoch,  epoch_end_time - epoch_start_time, ['%.4f' % l for l in losses.avg()],optimizer.param_groups[0]['lr']), logger = logger)
+        else:
+            # 학습된 배치가 하나도 없는 경우
+            print_log(f'[Training] EPOCH: {epoch} was skipped because all batches had a size of 1.', logger=logger)
 
         if epoch % args.val_freq == 0 and epoch != 0:
             # Validate the current model
@@ -238,28 +240,44 @@ def validate(base_model, test_dataloader, epoch, val_writer, args, config, logge
             points = data[0].cuda()
             label = data[1].cuda()
 
-            points = misc.fps(points, npoints)
+            # 배치 차원이 없는 경우를 대비한 방어 코드
+            if points.dim() == 2:
+                points = points.unsqueeze(0)
+
+            # FPS 샘플링
+            if points.size(1) != npoints:
+                points = misc.fps(points, npoints)
 
             logits = base_model(points)
             target = label.view(-1)
 
             pred = logits.argmax(-1).view(-1)
 
+            # 예측과 정답의 크기가 다르면 해당 배치는 건너뜀
+            if pred.shape != target.shape:
+                print_log(f"Warning: Shape mismatch in validation batch {idx}. Skipping.", logger=logger)
+                continue
+
             test_pred.append(pred.detach())
             test_label.append(target.detach())
 
-        test_pred = torch.cat(test_pred, dim=0)
-        test_label = torch.cat(test_label, dim=0)
+    # 처리된 배치가 하나도 없는 경우
+    if not test_pred:
+        print_log("Warning: No valid batches were processed during validation.", logger=logger)
+        return Acc_Metric(0.) # 기본값 0으로 정확도 반환
 
-        if args.distributed:
-            test_pred = dist_utils.gather_tensor(test_pred, args)
-            test_label = dist_utils.gather_tensor(test_label, args)
+    test_pred = torch.cat(test_pred, dim=0)
+    test_label = torch.cat(test_label, dim=0)
 
-        acc = (test_pred == test_label).sum() / float(test_label.size(0)) * 100.
-        print_log('[Validation] EPOCH: %d  acc = %.4f' % (epoch, acc), logger=logger)
+    if args.distributed:
+        test_pred = dist_utils.gather_tensor(test_pred, args)
+        test_label = dist_utils.gather_tensor(test_label, args)
 
-        if args.distributed:
-            torch.cuda.synchronize()
+    acc = (test_pred == test_label).sum() / float(test_label.size(0)) * 100.
+    print_log('[Validation] EPOCH: %d  acc = %.4f' % (epoch, acc), logger=logger)
+
+    if args.distributed:
+        torch.cuda.synchronize()
 
     # Add testing results to TensorBoard
     if val_writer is not None:

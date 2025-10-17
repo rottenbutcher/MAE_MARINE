@@ -55,16 +55,26 @@ def run_net(args, config, train_writer=None, val_writer=None):
             data_time.update(time.time() - batch_start_time)
             
             # =================== 입력 데이터 형태에 따른 분기 처리 ===================
-            if isinstance(data, tuple):
-                # HPR 모드 (MAE, M2AE): partial_view, ground_truth 2개 입력
-                partial_view, ground_truth = data
-                partial_view = partial_view.cuda()
-                ground_truth = ground_truth.cuda()
-                loss = base_model(partial_view, ground_truth)
-            else:
-                # Autoencoder 모드 (dVAE): points 1개 입력
+            model_name = config.model.NAME
+            
+            if model_name in ['Point_MAE', 'Point_M2AE', 'Point_BERT']:
+                # MAE 계열 모델은 2개의 입력을 받습니다.
+                # data가 튜플이나 리스트일 경우, 각 요소를 GPU로 보냅니다.
+                if isinstance(data, (tuple, list)):
+                    partial_view, ground_truth = data
+                    partial_view = partial_view.cuda()
+                    ground_truth = ground_truth.cuda()
+                    loss = base_model(partial_view, ground_truth)
+                else: # 예외적인 경우 (단일 텐서)
+                    points = data.cuda()
+                    loss = base_model(points, points) # ground_truth와 partial_view를 동일하게 전달
+
+            elif model_name == 'DiscreteVAE':
+                # dVAE 모델은 1개의 입력을 받습니다.
                 points = data.cuda()
                 loss = base_model(points)
+            else:
+                raise NotImplementedError(f'{model_name} is not supported in pretrain runner.')
             # =================================================================
 
             try:

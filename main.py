@@ -65,9 +65,25 @@ def main():
         logger.info(f'Set random seed to {args.seed}, '
                     f'deterministic: {args.deterministic}')
         misc.set_random_seed(args.seed + args.local_rank, deterministic=args.deterministic) # seed + rank, for augmentation
+    config = get_config(args, logger = logger)
     if args.distributed:
-        assert args.local_rank == torch.distributed.get_rank() 
+        assert config.total_bs % world_size == 0
+        world_size = dist_utils.get_dist_info()[1]
+        config.dataset.train.others.bs = config.total_bs // world_size
+        if config.dataset.get('val'):
+            config.dataset.val.others.bs = config.total_bs // world_size
+        if config.dataset.get('test'):
+            config.dataset.test.others.bs = config.total_bs // world_size
+    else:
+        # DataParallel 또는 단일 GPU 사용 시
+        # 모든 단계(train, val, test)의 배치 사이즈를 config의 total_bs로 통일합니다.
+        config.dataset.train.others.bs = config.total_bs
+        if config.dataset.get('val'):
+            config.dataset.val.others.bs = config.total_bs
+        if config.dataset.get('test'):
+            config.dataset.test.others.bs = config.total_bs
 
+            
     if args.shot != -1:
         config.dataset.train.others.shot = args.shot
         config.dataset.train.others.way = args.way

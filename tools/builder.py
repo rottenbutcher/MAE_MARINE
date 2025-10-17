@@ -13,19 +13,23 @@ from timm.scheduler import CosineLRScheduler
 
 def dataset_builder(args, config):
     dataset = build_dataset_from_cfg(config._base_, config.others)
+    # 'shuffle'은 'train' subset일 때만 True가 됩니다.
     shuffle = config.others.subset == 'train'
+    
     if args.distributed:
         sampler = torch.utils.data.distributed.DistributedSampler(dataset, shuffle = shuffle)
         dataloader = torch.utils.data.DataLoader(dataset, batch_size = config.others.bs,
                                             num_workers = int(args.num_workers),
-                                            drop_last = config.others.subset == 'train',
+                                            # 학습 시에만 마지막 배치를 버립니다.
+                                            drop_last = shuffle,
                                             worker_init_fn = worker_init_fn,
                                             sampler = sampler)
     else:
         sampler = None
         dataloader = torch.utils.data.DataLoader(dataset, batch_size=config.others.bs,
                                                 shuffle = shuffle, 
-                                                drop_last = config.others.subset == 'train',
+                                                # 학습 시(shuffle=True)에만 마지막 불완전한 배치를 버립니다.
+                                                drop_last = shuffle, 
                                                 num_workers = int(args.num_workers),
                                                 worker_init_fn=worker_init_fn)
     return sampler, dataloader

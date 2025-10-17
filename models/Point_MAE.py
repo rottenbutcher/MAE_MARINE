@@ -378,13 +378,37 @@ class PointTransformer(nn.Module):
             ckpt = torch.load(bert_ckpt_path)
             base_ckpt = {k.replace("module.", ""): v for k, v in ckpt['base_model'].items()}
 
-            for k in list(base_ckpt.keys()):
-                if k.startswith('MAE_encoder') :
-                    base_ckpt[k[len('MAE_encoder.'):]] = base_ckpt[k]
-                    del base_ckpt[k]
-                elif k.startswith('base_model'):
-                    base_ckpt[k[len('base_model.'):]] = base_ckpt[k]
-                    del base_ckpt[k]
+            # Point-M2AE 체크포인트인지 확인 (h_encoder 키 존재 여부로 판단)
+            is_m2ae = any(k.startswith('h_encoder.') for k in base_ckpt.keys())
+
+            if is_m2ae:
+                print_log('[Transformer] Loading weights from Point-M2AE checkpoint...', logger='Transformer')
+                new_ckpt = {}
+                # M2AE의 마지막 인코더 블록(가장 깊은 레벨) 가중치를 PointTransformer의 블록으로 매핑
+                # 예: h_encoder.encoder_blocks.2.blocks.0.norm1.weight -> blocks.0.norm1.weight
+                for k, v in base_ckpt.items():
+                    if k.startswith('h_encoder.encoder_blocks.2.'):
+                        new_key = k.replace('h_encoder.encoder_blocks.2.', '')
+                        new_ckpt[new_key] = v
+                    # 마지막 레벨의 norm 레이어 매핑
+                    elif k.startswith('h_encoder.encoder_norms.2.'):
+                        new_key = k.replace('h_encoder.encoder_norms.2', 'norm')
+                        new_ckpt[new_key] = v
+                    # Point-M2AE의 Token_Embed 레이어는 PointTransformer의 Encoder와 구조가 다르므로,
+                    # 이 부분은 사전 학습 가중치를 사용하지 않고 fine-tuning 시 새로 학습하도록 둡니다.
+                    # (또는 구조가 유사한 다른 부분의 가중치를 매핑할 수도 있습니다)
+                base_ckpt = new_ckpt
+            else: # 기존 Point-MAE 로직
+                print_log('[Transformer] Loading weights from Point-MAE checkpoint...', logger='Transformer')
+                for k in list(base_ckpt.keys()):
+                    if k.startswith('MAE_encoder.'):
+                        base_ckpt[k[len('MAE_encoder.'):]] = base_ckpt[k]
+                        del base_ckpt[k]
+                    elif k.startswith('base_model.'):
+                        base_ckpt[k[len('base_model.'):]] = base_ckpt[k]
+                        del base_ckpt[k]
+            
+            # Encoder와 Pos_embed는 이름이 같으므로 자동으로 매핑됨
 
             incompatible = self.load_state_dict(base_ckpt, strict=False)
 

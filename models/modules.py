@@ -38,7 +38,6 @@ class Attention(nn.Module):
         
         if attn_mask is not None:
             # attn_mask is (B, N, N), need to expand for multi-head
-            attn_mask = attn_mask.unsqueeze(1).repeat(1, self.num_heads, 1, 1)
             attn = attn.masked_fill(attn_mask, -1e9) # 마스크가 True인 위치에 아주 작은 값을 더해 softmax 후 0이 되도록 함
             
         attn = attn.softmax(dim=-1)

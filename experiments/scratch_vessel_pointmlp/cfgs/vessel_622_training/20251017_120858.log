@@ -1,0 +1,216 @@
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - Copy the Config file from cfgs/scratch_vessel_pointmlp.yaml to ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/config.yaml
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.config : cfgs/scratch_vessel_pointmlp.yaml
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.launcher : none
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.local_rank : 0
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.num_workers : 8
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.seed : 0
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.deterministic : False
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.sync_bn : False
+2025-10-17 12:08:58,909 - scratch_vessel_pointmlp - INFO - args.exp_name : vessel_622_training
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.loss : cd1
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.start_ckpts : None
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.ckpts : None
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.val_freq : 1
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.vote : False
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.resume : False
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.test : False
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.finetune_model : False
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.scratch_model : True
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.mode : None
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.way : -1
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.shot : -1
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.fold : -1
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.experiment_path : ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.tfboard_path : ./experiments/scratch_vessel_pointmlp/cfgs/TFBoard/vessel_622_training
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.log_name : scratch_vessel_pointmlp
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.use_gpu : True
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - args.distributed : False
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.optimizer = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.optimizer.type : AdamW
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.optimizer.kwargs = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.optimizer.kwargs.lr : 0.001
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.optimizer.kwargs.weight_decay : 0.05
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.scheduler = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.scheduler.type : CosLR
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.scheduler.kwargs = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.scheduler.kwargs.epochs : 250
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.scheduler.kwargs.initial_epochs : 10
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train._base_ = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train._base_.NAME : Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train._base_.DATA_PATH : data/Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train._base_.N_POINTS : 8192
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train._base_.PC_PATH : data/Vessel/vessel_pc
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train.others = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train.others.subset : train
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train.others.split_file : pretrain.txt
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.train.others.bs : 128
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val._base_ = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val._base_.NAME : Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val._base_.DATA_PATH : data/Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val._base_.N_POINTS : 8192
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val._base_.PC_PATH : data/Vessel/vessel_pc
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val.others = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val.others.subset : test
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val.others.split_file : finetune_train.txt
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.val.others.bs : 256
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test._base_ = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test._base_.NAME : Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test._base_.DATA_PATH : data/Vessel
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test._base_.N_POINTS : 8192
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test._base_.PC_PATH : data/Vessel/vessel_pc
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test.others = edict()
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test.others.subset : test
+2025-10-17 12:08:58,910 - scratch_vessel_pointmlp - INFO - config.dataset.test.others.split_file : finetune_test.txt
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.dataset.test.others.bs : 128
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.model = edict()
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.model.NAME : PointMLP
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.model.cls_dim : 700
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.npoints : 1024
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.total_bs : 128
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.step_per_update : 1
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.max_epoch : 250
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - config.grad_norm_clip : 10
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - Distributed training: False
+2025-10-17 12:08:58,911 - scratch_vessel_pointmlp - INFO - Set random seed to 0, deterministic: False
+2025-10-17 12:08:58,918 - scratch_vessel_pointmlp - INFO - Training from scratch
+2025-10-17 12:08:59,812 - scratch_vessel_pointmlp - INFO - Using Data parallel ...
+2025-10-17 12:09:00,043 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,053 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,062 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,087 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 0 was skipped because all batches had a size of 1.
+2025-10-17 12:09:00,106 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:00,332 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,342 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,351 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:00,385 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 1 was skipped because all batches had a size of 1.
+2025-10-17 12:09:01,353 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:01,373 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:01,382 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:01,660 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:01,670 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:01,679 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:01,721 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 2 was skipped because all batches had a size of 1.
+2025-10-17 12:09:01,990 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:02,024 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:02,034 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:02,320 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:02,329 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:02,338 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:02,372 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 3 was skipped because all batches had a size of 1.
+2025-10-17 12:09:02,658 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:02,691 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:02,701 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:02,977 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:02,986 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:02,995 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:03,039 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 4 was skipped because all batches had a size of 1.
+2025-10-17 12:09:03,401 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:03,460 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:03,474 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:03,857 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:03,867 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:03,877 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:03,940 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 5 was skipped because all batches had a size of 1.
+2025-10-17 12:09:04,276 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:04,325 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:04,339 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:04,738 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:04,750 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:04,761 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:04,845 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 6 was skipped because all batches had a size of 1.
+2025-10-17 12:09:05,422 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:05,531 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:05,544 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:06,115 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:06,127 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:06,139 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:06,242 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 7 was skipped because all batches had a size of 1.
+2025-10-17 12:09:06,656 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:06,693 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:06,704 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:07,039 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,052 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,066 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,142 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 8 was skipped because all batches had a size of 1.
+2025-10-17 12:09:07,499 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:07,541 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:07,559 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:07,849 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,862 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,888 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:07,949 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 9 was skipped because all batches had a size of 1.
+2025-10-17 12:09:08,287 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:08,324 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:08,333 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:08,634 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:08,643 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:08,652 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:08,692 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 10 was skipped because all batches had a size of 1.
+2025-10-17 12:09:08,987 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:09,024 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:09,035 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:09,305 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:09,319 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:09,328 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:09,369 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 11 was skipped because all batches had a size of 1.
+2025-10-17 12:09:09,664 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:09,696 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:09,706 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:10,003 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,012 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,022 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,063 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 12 was skipped because all batches had a size of 1.
+2025-10-17 12:09:10,362 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:10,395 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:10,406 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:10,705 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,723 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,737 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:10,778 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 13 was skipped because all batches had a size of 1.
+2025-10-17 12:09:11,067 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:11,124 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:11,137 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:11,578 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:11,589 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:11,600 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:11,661 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 14 was skipped because all batches had a size of 1.
+2025-10-17 12:09:11,974 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:12,011 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:12,023 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:12,316 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:12,325 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:12,335 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:12,380 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 15 was skipped because all batches had a size of 1.
+2025-10-17 12:09:12,662 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:12,694 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:12,707 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:12,994 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,003 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,013 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,055 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 16 was skipped because all batches had a size of 1.
+2025-10-17 12:09:13,339 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:13,375 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:13,385 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:13,655 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,683 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,693 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:13,730 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 17 was skipped because all batches had a size of 1.
+2025-10-17 12:09:14,019 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:14,051 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:14,062 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:14,332 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:14,342 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:14,352 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:14,393 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 18 was skipped because all batches had a size of 1.
+2025-10-17 12:09:14,677 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.
+2025-10-17 12:09:14,718 - scratch_vessel_pointmlp - INFO - Warning: No valid batches were processed during validation.
+2025-10-17 12:09:14,729 - scratch_vessel_pointmlp - INFO - Save checkpoint at ./experiments/scratch_vessel_pointmlp/cfgs/vessel_622_training/ckpt-last.pth
+2025-10-17 12:09:15,000 - scratch_vessel_pointmlp - INFO - Skipping batch 0 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:15,010 - scratch_vessel_pointmlp - INFO - Skipping batch 1 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:15,019 - scratch_vessel_pointmlp - INFO - Skipping batch 2 due to batch size <= 1 after GPU split.
+2025-10-17 12:09:15,060 - scratch_vessel_pointmlp - INFO - [Training] EPOCH: 19 was skipped because all batches had a size of 1.
+2025-10-17 12:09:15,341 - scratch_vessel_pointmlp - INFO - Warning: Shape mismatch in validation batch 0. Skipping.

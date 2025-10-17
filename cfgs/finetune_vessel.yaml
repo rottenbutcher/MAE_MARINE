@@ -12,13 +12,18 @@ scheduler: {
     initial_epochs : 10
 }}
 
-dataset : {
-  train : { _base_: cfgs/dataset_configs/Vessel.yaml,
-            others: {subset: 'train'}},
-  val : { _base_: cfgs/dataset_configs/Vessel.yaml,
-            others: {subset: 'test'}},
-  test : { _base_: cfgs/dataset_configs/Vessel.yaml,
-            others: {subset: 'test'}}}
+dataset:
+      train:
+        _base_: cfgs/dataset_configs/Vessel.yaml
+        others:
+          subset: 'finetune_train' # 'train' -> 'finetune_train'
+          HPR_POINTS: 2458
+      val:
+        _base_: cfgs/dataset_configs/Vessel.yaml
+        others:
+          subset: 'finetune_test' # 'test' -> 'finetune_test'
+          HPR_POINTS: 2458
+
 model : {
   NAME: PointTransformer,
   trans_dim: 384,

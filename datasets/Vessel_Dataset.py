@@ -21,8 +21,9 @@ class Vessel(data.Dataset):
         self.vertical_angle_limit = config.get('HPR_VERTICAL_ANGLE', 20)
         self.exclusion_angle = config.get('HPR_EXCLUSION_ANGLE', 20)
         
-        self.data_list_file = os.path.join(self.data_root, f'{self.subset}.txt')
-        
+        # self.data_list_file = os.path.join(self.data_root, f'{self.subset}.txt')
+        split_filename = config.get('split_file', f'{self.subset}.txt') 
+        self.data_list_file = os.path.join(self.data_root, split_filename)
         print_log(f'[DATASET] Loading data from {self.data_list_file}', logger='Vessel')
         
         with open(self.data_list_file, 'r') as f:

@@ -24,7 +24,7 @@ dataset:
 
 model:
   NAME: Point_BERT
-  dvae_ckpt: experiments/pretrain_dvae/cfgs/pretrain_dvae_vessel/ckpt-best.pth
+  # dvae_ckpt: experiments/pretrain_dvae/cfgs/pretrain_dvae_vessel/ckpt-best.pth
   group_size: 32
   num_group: 256
   num_tokens: 8192 # dVAE 코드북 크기 (가상)

@@ -54,17 +54,36 @@ class H_Encoder(nn.Module):
 
     def forward(self, neighborhoods, centers, idxs, initial_mask):
         bool_masked_pos = [initial_mask]
-        for i in range(len(neighborhoods) - 1, 0, -1):
-            b, g, k, _ = neighborhoods[i].shape
-            idx = idxs[i].reshape(b * g, -1)
-            visible_mask = ~bool_masked_pos[-1].reshape(-1)
-            visible_indices = torch.where(visible_mask)[0]
-            sub_indices = idx[visible_indices].reshape(-1).unique()
-            masked_pos = torch.ones(b * centers[i - 1].shape[1], device=initial_mask.device, dtype=torch.bool)
-            masked_pos.scatter_(0, sub_indices.long(), 0)
-            bool_masked_pos.append(masked_pos.reshape(b, centers[i - 1].shape[1]))
+        for i in range(len(centers) - 2, -1, -1):
+            # 현재 레벨(i+1)의 마스크를 가져옵니다. (B, G_i+1)
+            parent_mask = bool_masked_pos[-1]
 
-        bool_masked_pos.reverse()
+            # 현재 레벨의 KNN 인덱스를 가져옵니다. (B, G_i+1, K)
+            # 이 인덱스는 i+1 레벨의 각 그룹이 i 레벨의 어떤 그룹들로 구성되었는지를 나타냅니다.
+            child_indices = idxs[i+1] 
+
+            # 각 배치별로 마스크를 전파합니다.
+            b, g_child, k = child_indices.shape
+            g_parent = centers[i].shape[1]
+
+            new_mask_batch = []
+            for b_idx in range(b):
+                # 현재 레벨(i)의 모든 그룹을 일단 마스킹된 것으로 초기화합니다.
+                new_mask = torch.ones(g_parent, dtype=torch.bool, device=initial_mask.device)
+
+                # 보이는(visible) 부모 그룹들의 인덱스를 가져옵니다.
+                visible_parent_indices = torch.where(~parent_mask[b_idx])[0]
+
+                # 보이는 부모 그룹에 속했던 모든 자식 그룹들의 인덱스를 가져옵니다.
+                visible_child_indices = child_indices[b_idx, visible_parent_indices].flatten().unique()
+
+                # 해당 자식 그룹들을 마스킹 해제(visible) 처리합니다.
+                new_mask[visible_child_indices] = False
+                new_mask_batch.append(new_mask)
+
+            bool_masked_pos.append(torch.stack(new_mask_batch))
+
+        bool_masked_pos.reverse() # 순서를 다시 원래대로 뒤집습니다.
         x_vis_list, x_vis_masks_list = [], []
         full_tokens = None
 
